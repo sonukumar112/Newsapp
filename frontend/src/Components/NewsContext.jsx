@@ -45,7 +45,7 @@ export const NewsProvider = ({ children }) => {
     const fetchSavedNews = async () => {
       if (localStorage.getItem("auth-token")) {
         try {
-          const response = await fetch("http://localhost:4000/getsavednews", {
+          const response = await fetch("/getsavednews", {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -71,7 +71,7 @@ export const NewsProvider = ({ children }) => {
   const fetchNotes = async () => {
       if (localStorage.getItem("auth-token")) {
         try {
-          const response = await fetch("http://localhost:4000/getnotes", {
+          const response = await fetch("/getnotes", {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -110,7 +110,7 @@ const handleSave = (id, title, description, urlToImage, url) => {
   alert("News Saved Successfully!");
   
   if (localStorage.getItem('auth-token')) {
-      fetch("http://localhost:4000/addtosave", {
+      fetch("/addtosave", {
           method: "POST",
           headers: {
               Accept: "application/json",  
@@ -132,7 +132,7 @@ const handleSave = (id, title, description, urlToImage, url) => {
     if(window.prompt("Are you sure want to delete?","Yes") === "Yes"){
       setSavedNews((prev) => prev.filter(articleId => articleId !== id));
       if(localStorage.getItem('auth-token')){
-        fetch("http://localhost:4000/removefromsave",{
+        fetch("/removefromsave",{
           method:"POST",
           headers:{
             Accept:"application/form-data",
@@ -175,7 +175,7 @@ const handleSave = (id, title, description, urlToImage, url) => {
   
       if (localStorage.getItem("auth-token")) {
         try {
-          const response = await fetch("http://localhost:4000/addtonote", {
+          const response = await fetch("/addtonote", {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -210,7 +210,7 @@ const handleSave = (id, title, description, urlToImage, url) => {
   
     if (localStorage.getItem("auth-token")) {
       try {
-        const response = await fetch("http://localhost:4000/deletenote", {
+        const response = await fetch("/deletenote", {
           method: "POST",
           headers: {
             Accept: "application/json",
