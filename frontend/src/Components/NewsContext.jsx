@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
+import { baseUrl } from '../../Url';
 
 const NewsContext = createContext();
 
@@ -45,7 +46,7 @@ export const NewsProvider = ({ children }) => {
     const fetchSavedNews = async () => {
       if (localStorage.getItem("auth-token")) {
         try {
-          const response = await fetch("/getsavednews", {
+          const response = await fetch(`${baseUrl}/getsavednews`, {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -71,7 +72,7 @@ export const NewsProvider = ({ children }) => {
   const fetchNotes = async () => {
       if (localStorage.getItem("auth-token")) {
         try {
-          const response = await fetch("/getnotes", {
+          const response = await fetch(`${baseUrl}/getnotes`, {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -110,7 +111,7 @@ const handleSave = (id, title, description, urlToImage, url) => {
   alert("News Saved Successfully!");
   
   if (localStorage.getItem('auth-token')) {
-      fetch("/addtosave", {
+      fetch(`${baseUrl}/addtosave`, {
           method: "POST",
           headers: {
               Accept: "application/json",  
@@ -132,7 +133,7 @@ const handleSave = (id, title, description, urlToImage, url) => {
     if(window.prompt("Are you sure want to delete?","Yes") === "Yes"){
       setSavedNews((prev) => prev.filter(articleId => articleId !== id));
       if(localStorage.getItem('auth-token')){
-        fetch("/removefromsave",{
+        fetch(`${baseUrl}/removefromsave`,{
           method:"POST",
           headers:{
             Accept:"application/form-data",
@@ -175,7 +176,7 @@ const handleSave = (id, title, description, urlToImage, url) => {
   
       if (localStorage.getItem("auth-token")) {
         try {
-          const response = await fetch("/addtonote", {
+          const response = await fetch(`${baseUrl}/addtonote`, {
             method: "POST",
             headers: {
               Accept: "application/json",
@@ -210,7 +211,7 @@ const handleSave = (id, title, description, urlToImage, url) => {
   
     if (localStorage.getItem("auth-token")) {
       try {
-        const response = await fetch("/deletenote", {
+        const response = await fetch(`${baseUrl}/deletenote`, {
           method: "POST",
           headers: {
             Accept: "application/json",
