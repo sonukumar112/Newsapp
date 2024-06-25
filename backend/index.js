@@ -70,6 +70,10 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
+app.get("/",(req,res) => {
+  res.send("Server is running....");
+})
+
 // Middleware to fetch user based on token
 const fetchUser = async (req, res, next) => {
   const token = req.header('auth-token');
