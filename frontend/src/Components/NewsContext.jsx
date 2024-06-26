@@ -17,6 +17,7 @@ export const NewsProvider = ({ children }) => {
   const [country, setCountry] = useState("in");
 
   useEffect(() => {
+    console.log(import.meta.env.VITE_KEY);
     const fetchNews = async () => {
         setLoading(true);
         try {
