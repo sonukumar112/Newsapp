@@ -28,8 +28,7 @@ export const NewsProvider = ({ children }) => {
                         apiKey: import.meta.env.VITE_KEY,
                     },
                     headers: {
-                      'Upgrade': 'HTTP/2.0',
-                      'Connection': 'Upgrade'
+                      
                   },
                 }
             );
