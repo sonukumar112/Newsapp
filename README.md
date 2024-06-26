@@ -28,6 +28,10 @@ Welcome to our news aggregation platform! Stay updated with the latest headlines
 ## Login/Signup
 ![App Screenshot](https://res.cloudinary.com/ddavdy2aa/image/upload/v1719375460/Newsmania/yvokm3n08o7viuu17poy.png)
 
+## Mobile Responsive
+![App Screenshot](https://res.cloudinary.com/ddavdy2aa/image/upload/v1719375461/Newsmania/rp3wdyhotaj11ssm5uwc.png)
+
+
 
 
 
