@@ -17,7 +17,6 @@ export const NewsProvider = ({ children }) => {
   const [country, setCountry] = useState("in");
 
   useEffect(() => {
-    console.log(import.meta.env.VITE_KEY);
     const fetchNews = async () => {
         setLoading(true);
         try {
@@ -27,9 +26,6 @@ export const NewsProvider = ({ children }) => {
                     params: {
                         country: country,
                         apiKey: import.meta.env.VITE_KEY,
-                    },
-                    headers: {
-                      'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
                     },
                 }
             );
