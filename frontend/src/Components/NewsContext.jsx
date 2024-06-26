@@ -28,10 +28,6 @@ export const NewsProvider = ({ children }) => {
                         country: country,
                         apiKey: import.meta.env.VITE_KEY,
                     },
-                    headers: {
-                      'Upgrade': 'HTTP/1.0',
-                      'Connection': 'Upgrade'
-                  },
                 }
             );
             setArticles(
