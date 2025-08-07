@@ -1,5 +1,5 @@
 
-# NewsMania
+# News Web App
 
 Welcome to our news aggregation platform! Stay updated with the latest headlines from top newspapers in India and the USA. Registered users can personalize their news feed, save articles for later reading, and jot down notes. 
 
@@ -60,4 +60,5 @@ Start the server
 ```bash
   npm run dev
 ```
+
 
